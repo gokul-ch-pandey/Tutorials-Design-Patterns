@@ -1,0 +1,15 @@
+1. SingleTon gurantees that only one instance is created and the same is returned all the time.
+2. Though singleton objects can be eagerly loaded but as a practice it should be lazily loaded.
+	This means object is created when it is required.
+3. No parameter are required for the construction of singleton.
+4. should have private instance variable and private constructor.
+5. 
+
+Question. What is double checked locking (DCL)?
+Answer. If we are working in a single threaded application then Lazy loading is sufficient  
+		for Singleton objects. But in a multiThread application you need to ensure thread 
+		safety. That means two thread accessing getInstance should use it in synchronized way.
+		for this we can make the method getInstace synchronized, but this is huge performance hit
+		as synchronized method are 100 times slower. The alternate is to use synchronized block of
+		code while initializing the singleton object instance.
+		
